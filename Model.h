@@ -18,13 +18,15 @@ public:
 
 	void write(int ch);
 
-	std::vector<MyString> getLines() const;
+	std::vector<StringArr> getLines() const;
 	void setFileName(MyString newName);
 	MyString getFileName() const;
 	MyString getBuffer() const;
 	int getLine() const;
 	int getCol() const;
 	int getMode() const;
+
+	void clearWindow();
 
 	void deleteButton();
 	void deleteWord();
@@ -33,7 +35,7 @@ public:
 	void toStartWord();
 	void toEndWord();
 	void toEndLine();
-
+	
 
 	void clearBuffer();
 	void addBuffer(int sym);
@@ -50,7 +52,10 @@ public:
 	MyString getCopyBuffer();
 
 	//commands
-	bool openFile(MyString filename);
+
+	int getTopLine() const;
+	void setTopLine(int value);
+
 
 	void enter() ;
 	void backspace();
@@ -60,11 +65,30 @@ public:
 	void keyDown();
 	void keyUp();
 	void registerObserver(Model* observer) {};
+	void replaceSymbol();
+	void pageUp();
+	void pageDown();
+	void toLastPage();
+	void toFirstPage();
+	void setFind(MyString newstr);
+	MyString getFind();
+	void findForward();
+	void findBack();
+
+	void closeWithSaving();
+	void writeCloseFile();
+	void helpInfo();
+	bool writeFile();
+	bool openFile(MyString filename);
+
+	void backspaceCommand();
 private:
+	MyString findString;
+	int topline = 0;
 	MyString copyBuffer;
 	MyString buffer;
 	int mode = NAV_MODE;
-	MyString fileName = "Unnamed";
+	MyString fileName = "Unnamed.txt";
 	int line_pos_ = 0, col_pos_ = 0;
 	std::vector<StringArr> lines_;
 };

@@ -5,11 +5,11 @@
 
 class StatusBar {
 private:
-	WINDOW* _parent;
+	
 	MyString _text;
 
 public:
-	StatusBar(WINDOW* parent = stdscr);
+	StatusBar();
 
 	void setText(MyString text);
 	void draw();

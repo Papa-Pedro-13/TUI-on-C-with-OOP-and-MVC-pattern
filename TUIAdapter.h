@@ -10,7 +10,6 @@ public:
 		initscr();
 		cbreak();
 		noecho();
-		scrollok(stdscr, TRUE);
 		keypad(stdscr, true);
 
 	}

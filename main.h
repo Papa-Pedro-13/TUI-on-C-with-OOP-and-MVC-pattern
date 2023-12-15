@@ -18,11 +18,15 @@
 #define KEY_DEL 330
 #define KEY_TAB 9
 #define KEY_CM 58
-#define KEY_PGD 457
-#define KEY_PGU 451
+#define PAGE_DOWN 338
+#define PAGE_UP 339
 #define COMMAND_MODE 1
 #define WRITE_MODE 2
 #define FIND_MODE 3
 #define NAV_MODE 4
 #define COLS 120
+
+
+
+
 #endif

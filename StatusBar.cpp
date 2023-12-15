@@ -1,7 +1,7 @@
 #include "StatusBar.h"
 
-StatusBar::StatusBar(WINDOW* parent ) {
-	_parent = parent;
+StatusBar::StatusBar() {
+	
 	_text = "";
 }
 

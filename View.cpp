@@ -8,19 +8,16 @@ void View::update(const Model& model)
 {
 	textwin_.clearWindow();
 	int lineCnt = 0;
-
-	
-
-
+	std::vector<StringArr> lines = model.getLines();
+	int lineSize = lines.size();
 	printStatusBar( model);
-	for (auto line: model.getLines()) {
-		textwin_.moveprint(lineCnt, 0, line);
+	for (int i = model.getTopLine(); i < model.getTopLine() + 29 && i<lineSize;i++) {
+		textwin_.moveprint(lineCnt, 0, lines[i].line);
 		
-		/*textwin_.update();*/
 		lineCnt++;
 	
 	}
-	textwin_.movecursor(model.getLine(), model.getCol());
+	textwin_.movecursor(model.getLine()-model.getTopLine(), model.getCol());
 	textwin_.update();
 }
 void View::printStatusBar( const Model& model) {
